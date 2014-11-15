@@ -596,6 +596,14 @@ var vcsPaths = []*vcsPath{
 		check:  noVCSSuffix,
 	},
 
+	// Gitlab
+	{
+		prefix: "gitlab.",
+		re:     `^(?P<root>gitlab.(?P<domain>[A-Za-z0-9_.\-]+)/(?P<user>[A-Za-z0-9_.\-]+)/(?P<project>[A-Za-z0-9_.\-]+))(/[A-Za-z0-9_.\-]+)*$`,
+		vcs:    "git",
+		repo:   "git@gitlab.{domain}:{user}/{project}.git",
+	},
+
 	// Bitbucket
 	{
 		prefix: "bitbucket.org/",
